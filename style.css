@@ -1,0 +1,159 @@
+/* Red hot display font family  */
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap");
+
+:root {
+  /* Primary colors  */
+
+  --Blue-100: hsl(225, 100%, 94%);
+  --Blue-100-bg: hsla(225, 100%, 94%, 0.3);
+  --Blue-700: hsl(245, 75%, 52%);
+  --Blue-box-shadow: hsla(245, 75%, 52%, 0.2);
+  --Blue-700-hover: hsla(245, 75%, 52%, 0.7);
+
+  /* Neutral colors  */
+
+  --Blue-50: hsl(225, 100%, 98%);
+  --Gray-600: hsl(224, 23%, 55%);
+  --Blue-950: hsl(223, 47%, 23%);
+
+  /* font sizes  */
+
+  --fs-large: 1.5rem;
+  --fs-mid: 1.1rem;
+  --fs-base: 1rem;
+  --fs-small: 0.91rem;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Red Hat Display", sans-serif;
+  display: grid;
+  place-items: center;
+  background-color: var(--Blue-100);
+  background-image: url(images/pattern-background-mobile.svg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: top right;
+  color: var(--Gray-600);
+}
+
+.main-container {
+  width: min(90%, 23.4375rem);
+  display: flex;
+  flex-direction: column;
+  background-color: var(--Blue-50);
+  border-radius: 1rem;
+  box-shadow: 2px 2px 8px var(--Blue-box-shadow);
+}
+
+.card__image {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 1rem 1rem 0 0;
+  
+}
+
+.card__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem;
+
+}
+
+.card__header {
+  font-size: clamp(var(--fs-large), 5vw, 1.7rem);
+  color: var(--Blue-950);
+  font-weight: 900;
+}
+
+.card__description {
+  max-width: 25ch;
+  font-size: clamp((var) --fs-base, 5vw, 1.1rem);
+  font-weight: 700;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.card__pricing-details {
+  background-color: var(--Blue-100-bg);
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  border-radius: 0.8rem;
+  width: 100%;
+}
+
+.card__price-plan {
+  margin-right: 3rem;
+}
+
+.card__plan {
+  color: var(--Blue-950);
+  font-weight: 900;
+  display: block;
+}
+
+.card__price {
+  font-weight: 700;
+  font-size: clamp(var(--fs-small), 5vw, 0.933rem);
+}
+
+.card__change-plan:link,
+.card__change-plan:visited {
+  color: var(--Blue-700);
+  font-size: clamp(var(--fs-small), 5vw, 0.933rem);
+  font-weight: 700;
+  align-content: center;
+}
+
+ .card__button {
+  width: 100%;
+  padding: 1rem;
+  background: var(--Blue-700);
+  border: none;
+  outline: none;
+  border-radius: 0.8rem;
+  color: var(--Blue-50);
+  font-weight: 700;
+  font-size: clamp(var(--fs-base), 5vw, 1.1rem);
+  box-shadow: 0 12px 12px 0 var(--Blue-box-shadow);
+  cursor: pointer;
+
+} 
+
+.card__cancel-plan {
+  text-decoration: none;
+  color: var(--Gray-600);
+  font-weight: 900;
+  font-size: clamp(var(--fs-base), 5vw, 1.1rem);
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 35em) {
+  body {
+    background-image: url(images/pattern-background-desktop.svg);
+  }
+  .card__change-plan:hover {
+    color: var(--Blue-700-hover);
+  }
+
+   .card__button:hover {
+    background-color: var(--Blue-700-hover);
+    box-shadow: 0px 15px 15px var(--Blue-box-shadow);
+  } 
+
+  .card__cancel-plan:hover {
+    color: var(--Blue-950);
+  }
+}
